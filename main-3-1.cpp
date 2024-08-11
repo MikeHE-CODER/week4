@@ -6,4 +6,6 @@ int main() {
   int *numbers1 = readNumbers();
   int *numbers2 = readNumbers();
   cout << equalsArray(numbers1, numbers2, 10);
+  delete[] numbers1;
+  delete[] numbers2;
 }
