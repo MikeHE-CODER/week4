@@ -1,6 +1,6 @@
 #include <algorithm>
 #include <iostream>
-
+#include <vector>
 using namespace std;
 int *readNumbers() {
   int *array = new int[10];
@@ -15,8 +15,14 @@ void printNumbers(int *numbers, int length) {
   }
 }
 int secondSmallestSum(int *numbers, int length) {
-  int *newarray = new int[length];
-  std::copy(numbers, numbers + length, newarray);
-  std::sort(newarray, newarray + length);
+  std::vector<int> newarray;
+  int sum = 0;
+  for (int i = 0; i < length; i++) {
+    for (int j = i; j < length; j++) {
+      sum += numbers[j];
+      newarray.push_back(sum);
+    }
+  }
+  std::sort(newarray.begin(), newarray.end());
   return newarray[1];
 }
