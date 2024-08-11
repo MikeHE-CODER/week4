@@ -16,8 +16,8 @@ void printNumbers(int *numbers, int length) {
 }
 int secondSmallestSum(int *numbers, int length) {
   std::vector<int> newarray;
-  int sum = 0;
   for (int i = 0; i < length; i++) {
+    int sum = 0;
     for (int j = i; j < length; j++) {
       sum += numbers[j];
       newarray.push_back(sum);
